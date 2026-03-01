@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "EBS IG Downloader",
+  "version": "1.0",
+  "description": "Instagram postlarındaki görselleri hızlıca HD olarak indirmenizi sağlayan araç.",
+  "permissions": [
+    "downloads",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.instagram.com/*"
+  ],
+  "icons": {
+    "16": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.instagram.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

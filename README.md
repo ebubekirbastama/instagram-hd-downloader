@@ -3,91 +3,117 @@
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)  
 [![Made for Journalists](https://img.shields.io/badge/Made%20for-Journalists-blue)]()
 
----
+--------------------------------------------------
 
 🚀 Hakkında
 
-Instagram HD Downloader, gazeteciler ve içerik üreticiler için geliştirilmiş hafif ve kullanımı kolay bir araçtır.  
+Instagram HD Downloader, gazeteciler ve içerik üreticiler için geliştirilmiş hafif ve kullanımı kolay bir araçtır.
 
 Bu araç sayesinde:
 
-- Instagram postlarındaki tüm görselleri tespit eder 🖼️  
-- Full HD çözünürlükte olan görselleri otomatik algılar 🔥  
-- Her resmin üstüne ufak bir download butonu ekler ⬇️  
-- Tıklandığında HD görsel yeni sekmede açılır 🌐  
-- Çoklu görsel (carousel) desteği ✔️  
-- Mouse hover gerekmez, direkt kullanılabilir 👌  
+- Instagram postlarındaki tüm görselleri tespit eder
+- Full HD çözünürlükte olan görselleri otomatik algılar
+- Videoları (Reels dahil) gerçek HD mp4 olarak yakalar
+- Her medya öğesinin üstüne ufak bir download butonu ekler
+- Tıklandığında medya yeni sekmede açılır
+- Çoklu görsel (carousel) desteği vardır
+- Mouse hover gerekmez, direkt kullanılabilir
 
-⚠️ Not: Bu araç haberci ve içerik üreticileri için tasarlanmıştır.  
+NOT:
+Bu araç haberci ve içerik üreticileri için tasarlanmıştır.
 Telif hakkına dikkat edin ve kaynak belirtin.
 
----
+--------------------------------------------------
 
 💡 Özellikler
 
-- Tüm post görsellerini tek seferde HD olarak görüntüleme  
-- Ufak, minimal download SVG ikonu  
-- Carousel / çoklu görsel desteği  
-- Full HD çözünürlükte linkler  
-- Tarayıcı console veya eklenti olarak kolay entegrasyon  
-- Bağımsız, internet bağlantısı gerektirmez (SVG inline)  
+- Tüm post görsellerini HD olarak görüntüleme
+- Video desteği (Post + Reels)
+- JSON içinden direkt HD mp4 çekme (en kaliteli yöntem)
+- Blob / stream bypass (gerçek CDN link yakalama)
+- Minimal download SVG ikonu
+- Carousel / çoklu medya desteği
+- Full HD çözünürlük
+- Console veya eklenti olarak kullanım
+- Harici bağımlılık yok
 
----
+--------------------------------------------------
+
+🧠 Video Nasıl Çalışır?
+
+Instagram videoları normalde:
+
+- blob: URL ile gelir (indirilemez)
+- Parça parça stream edilir
+
+Bu araç:
+
+1. Sayfadaki JSON verisini tarar
+2. video_url veya video_versions alanlarını bulur
+3. Gerçek CDN mp4 linkini yakalar
+4. HD olarak açar
+
+Bu yöntem en stabil ve en kaliteli çözümdür.
+
+--------------------------------------------------
 
 ⚡ Kullanım
 
-1️⃣ Console üzerinden:
+1) Console ile:
 
-1. Instagram postunu açın  
-2. F12 → Console sekmesine geçin  
-3. Aşağıdaki script’i yapıştırın ve çalıştırın:
-
-// ...Console script buraya eklenir...
-
-4. Posttaki tüm görsellerin sağ üstüne ⬇️ butonları eklenecek  
-5. Butona tıklayın → HD görsel yeni sekmede açılır  
-
-2️⃣ Chrome Extension Olarak:
-
-1. Repo’yu klonlayın veya ZIP indirip açın  
-2. chrome://extensions/ → Geliştirici Modu → Paketlenmemiş yükle  
-3. Klasörü seçin  
-4. Instagram açın → sağ üst köşede download ikonları aktif olacak  
+1. Instagram postunu aç
+2. F12 → Console sekmesine gir
+3. Script'i yapıştır ve çalıştır
+4. Butonlar otomatik eklenecek
+5. Tıkla → HD açılır
 
 ---
+
+2) Chrome Extension:
+
+1. Repo’yu indir
+2. chrome://extensions/
+3. Geliştirici modu aç
+4. Paketlenmemiş yükle
+5. Klasörü seç
+6. Instagram’da aktif olur
+
+--------------------------------------------------
 
 📁 Dosya Yapısı
 
 instagram-hd-downloader/<br>
-├─ manifest.json       # Chrome eklenti ayarları<br>
-├─ content.js          # Görselleri bulma ve buton ekleme<br>
-├─ background.js       # Buton tıklama olayları (opsiyonel)<br>
-├─ icon/               # Ufak download ikonları<br>
-├─ README.md           # Bu dosya<br>
-└─ LICENSE             # MIT lisansı<br>
+├─ manifest.json<br>
+├─ content.js<br>
+├─ background.js (opsiyonel)<br>
+├─ icon/<br>
+├─ README.txt<br>
+└─ LICENSE<br>
 
----
+--------------------------------------------------
 
 📝 Neden Kullanılmalı?
 
-- Gazeteciler için hızlı görsel erişimi 📰  
-- HD görselleri manuel olarak bulmak yerine tek tıkla almak  
-- Carousel postları hızlıca toplamak  
-- Videolar / fotoğraflar için genişletilebilir yapı  
-- Açık kaynak, özelleştirilebilir ve güvenli  
+- Gazeteciler için hızlı medya erişimi
+- HD görseller ve videoları tek tıkla almak
+- Reels ve carousel içerikleri toplamak
+- CDN linke direkt erişim
+- Açık kaynak ve özelleştirilebilir
 
----
+--------------------------------------------------
 
 📦 Gelecek Planları
 
-- Tek tıkla tüm postu ZIP indir  
-- Video / Reels desteği  
-- Dosya isimlendirme: kullanıcı + tarih + sıra  
-- Chrome / Firefox cross-browser uyumluluğu  
+- Tek tıkla ZIP indir
+- Akıllı dosya isimlendirme
+- Story indirme
+- Cross-browser destek
+- Toplu profil medya çekme
 
----
+--------------------------------------------------
 
 📜 Lisans
 
-MIT License © 2026  
+MIT License © 2026
+
 Özgürce kullanabilir, değiştirebilir ve dağıtabilirsiniz.
